@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "./container";
 import { Heading } from "./heading";
+import { LandingImages } from "./landing-images";
 import { Subheading } from "./subheading";
 import { Button } from "./ui/button";
 
@@ -23,6 +24,8 @@ export const Hero = () => {
             <Link href="#">View role based demos</Link>
           </Button>
         </div>
+
+        <LandingImages />
       </Container>
     </div>
   );
