@@ -41,7 +41,7 @@ export const MobileNavbar = () => {
     <div className="relative flex justify-between px-4 py-2 md:hidden">
       <Logo />
       <button onClick={() => setOpen(!open)}>
-        <IconLayoutSidebar className="size-4" />
+        <IconLayoutSidebar className="ml-90 size-4" />
       </button>
 
       <AnimatePresence>
@@ -71,7 +71,7 @@ export const MobileNavbar = () => {
                 className="absolute top-2 right-2"
                 onClick={() => setOpen(false)}
               >
-                <IconX className="mr-28" />
+                <IconX className="mr-10 size-5" />
               </button>
             </div>
 
@@ -102,7 +102,7 @@ export const MobileNavbar = () => {
                 </motion.div>
               ))}
             </div>
-            <div className="mr-25 flex items-center justify-end gap-4">
+            <div className="mr-10 flex items-center justify-end gap-4">
               <Link
                 href="/login"
                 className="inline-block rounded-md px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400"
