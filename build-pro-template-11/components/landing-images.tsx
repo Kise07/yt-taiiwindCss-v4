@@ -22,7 +22,7 @@ export const LandingImages = () => {
         className="shadow-2xl perspective-[4000px]"
       >
         <Image
-          src="https://assets.aceternity.com/agenforce-demo-2.jpg"
+          src="https://assets.aceternity.com/screenshots/4.jpg"
           alt="Demo 1 for agenforce template"
           height={1080}
           width={1920}
@@ -49,10 +49,10 @@ export const LandingImages = () => {
           ease: "easeOut",
           delay: 0.1,
         }}
-        className="translate-x-20 -translate-y-40 perspective-[4000px]"
+        className="translate-x-20 -translate-y-10 perspective-[4000px] md:-translate-y-20 lg:-translate-y-40"
       >
         <Image
-          src="https://assets.aceternity.com/agenforce-demo-1.jpg"
+          src="https://assets.aceternity.com/screenshots/3.jpg"
           alt="Demo 1 for agenforce template"
           height={1080}
           width={1920}
