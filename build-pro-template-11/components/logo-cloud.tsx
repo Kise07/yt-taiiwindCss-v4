@@ -30,7 +30,7 @@ export const LogoCloud = () => {
     },
   ];
   return (
-    <section className="">
+    <section className="pb-10 md:pb-20 lg:pb-32">
       <h2 className="mx-auto max-w-xl text-center text-lg font-medium text-neutral-600 dark:text-neutral-400">
         Trusted by modern operators across industries. <br />
         <span className="text-neutral-400">From pilot to scale chaos.</span>
