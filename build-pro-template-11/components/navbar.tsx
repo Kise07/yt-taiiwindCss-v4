@@ -68,10 +68,10 @@ export const MobileNavbar = () => {
             <div className="flex justify-between">
               <Logo />
               <button
-                className="absolute top-2 right-2"
+                className="absolute top-4 right-4"
                 onClick={() => setOpen(false)}
               >
-                <IconX className="mr-27 size-5" />
+                <IconX className="size-5" />
               </button>
             </div>
 
@@ -102,7 +102,7 @@ export const MobileNavbar = () => {
                 </motion.div>
               ))}
             </div>
-            <div className="mr-27 flex items-center justify-end gap-4">
+            <div className="flex items-center justify-end gap-4">
               <Link
                 href="/login"
                 className="inline-block rounded-md px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400"
