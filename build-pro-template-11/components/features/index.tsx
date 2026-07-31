@@ -4,6 +4,7 @@ import { Heading } from "../heading";
 import { Subheading } from "../subheading";
 import { Card, CardContent, CardCTA, CardSkeleton, CardTitle } from "./card";
 import { SkeletonOne } from "./skeletons/first";
+import { SkeletonThree } from "./skeletons/third";
 
 export const Features = () => {
   return (
@@ -41,9 +42,11 @@ export const Features = () => {
           </CardContent>
         </Card>
         <Card className="rounded-tr-3xl rounded-br-3xl">
-          <CardSkeleton></CardSkeleton>
+          <CardSkeleton className="overflow-visible">
+            <SkeletonThree />
+          </CardSkeleton>
           <CardContent>
-            <CardTitle>Prebuilt Agents, Tuned to Your Workflows</CardTitle>
+            <CardTitle>Approvals, Guardrails, and Full Auditability</CardTitle>
             <CardCTA>
               <IconPlus />
             </CardCTA>
