@@ -38,38 +38,38 @@ export const Navbar = () => {
 export const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="relative flex justify-between px-4 py-2 md:hidden">
+    <div className="relative flex items-center justify-between px-4 py-2 md:hidden">
       <Logo />
-      <button onClick={() => setOpen(!open)}>
-        <IconLayoutSidebar className="size-4" />
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex size-10 items-center justify-center rounded-md"
+      >
+        <IconLayoutSidebar className="size-5" />
       </button>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{
-              opacity: 0,
-            }}
+            initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
               backdropFilter: "blur(15px)",
-              background: "transparent",
+              backgroundColor: "rgba(255,255,255,0.75)",
             }}
             exit={{
               opacity: 0,
               backdropFilter: "blur(0px)",
-              background: "rgba(255, 255, 255, 0.5)",
+              backgroundColor: "rgba(255,255,255,0)",
             }}
-            transition={{
-              duration: 0.2,
-            }}
-            className="fixed inset-0 z-50 h-full w-full px-4 py-1.5"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 px-4 py-1.5"
           >
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between">
               <Logo />
+
               <button
-                className="absolute top-4 right-4"
                 onClick={() => setOpen(false)}
+                className="mr-[42rem] flex size-10 items-center justify-center rounded-md"
               >
                 <IconX className="size-5" />
               </button>
@@ -102,7 +102,7 @@ export const MobileNavbar = () => {
                 </motion.div>
               ))}
             </div>
-            <div className="flex items-center justify-end gap-4">
+            <div className="mr-[43rem] flex items-center justify-end gap-4">
               <Link
                 href="/login"
                 className="inline-block rounded-md px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400"
