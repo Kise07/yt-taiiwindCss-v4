@@ -75,6 +75,10 @@ export const CardSkeleton = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div className={cn("min-h-40 md:min-h-80", className)}>{children}</div>
+    <div
+      className={cn("relative min-h-40 overflow-hidden md:min-h-80", className)}
+    >
+      {children}
+    </div>
   );
 };

@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import {
+  IconPrison,
+  IconExclamationCircle,
   IconCircleDashedCheck,
   IconClock,
   IconRipple,
@@ -9,11 +11,28 @@ export const SkeletonOne = () => {
   return (
     <div>
       <SkeletonCard
+        className="absolute bottom-0 left-12 z-30 max-w-[90%]"
         icon={<IconCircleDashedCheck className="size-4" />}
         title="Campaign Planner"
         description="Creates clear, ready-to-use campaign briefs using product info, audience
         data, and past results."
         badge={<Badge text="120S" variant="danger" />}
+      />
+      <SkeletonCard
+        className="absolute bottom-10 left-8 z-20"
+        icon={<IconExclamationCircle className="size-4" />}
+        title="Issue Tracker"
+        description="Creates clear, ready-to-use campaign briefs using product info, audience
+        data, and past results."
+        badge={<Badge text="10S" variant="success" />}
+      />
+      <SkeletonCard
+        className="absolute bottom-20 left-4 z-10 max-w-[80%]"
+        icon={<IconPrison className="size-4" />}
+        title="Risk Analysis"
+        description="Creates clear, ready-to-use campaign briefs using product info, audience
+        data, and past results."
+        badge={<Badge text="40S" variant="warning" />}
       />
     </div>
   );
@@ -24,14 +43,21 @@ const SkeletonCard = ({
   title,
   description,
   badge,
+  className,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   badge: React.ReactNode;
+  className?: string;
 }) => {
   return (
-    <div className="mx-auto w-full max-w-[90%] rounded-lg border border-neutral-200 bg-neutral-100 p-3 dark:border-neutral-700">
+    <div
+      className={cn(
+        "mx-auto my-auto h-fit w-full max-w-[85%] rounded-2xl border border-neutral-200 bg-neutral-100 p-3 dark:border-neutral-700",
+        className,
+      )}
+    >
       <div className="flex items-center gap-3">
         {icon}
         <p className="text-sm font-bold text-black dark:text-white">{title}</p>
