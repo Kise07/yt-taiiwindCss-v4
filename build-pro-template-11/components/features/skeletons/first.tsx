@@ -9,7 +9,12 @@ import {
 
 export const SkeletonOne = () => {
   return (
-    <div>
+    <div
+      style={{
+        transform: "rotateZ(15deg) rotateY(-20deg) rotateX(30deg) scale(1.2)",
+      }}
+      className="h-full w-full -translate-y-10 mask-r-from-50% mask-radial-from-50% perspective-distant"
+    >
       <SkeletonCard
         className="absolute bottom-0 left-12 z-30 max-w-[90%]"
         icon={<IconCircleDashedCheck className="size-4" />}
@@ -19,7 +24,7 @@ export const SkeletonOne = () => {
         badge={<Badge text="120S" variant="danger" />}
       />
       <SkeletonCard
-        className="absolute bottom-10 left-8 z-20"
+        className="absolute bottom-8 left-8 z-20"
         icon={<IconExclamationCircle className="size-4" />}
         title="Issue Tracker"
         description="Creates clear, ready-to-use campaign briefs using product info, audience
@@ -54,16 +59,18 @@ const SkeletonCard = ({
   return (
     <div
       className={cn(
-        "mx-auto my-auto h-fit w-full max-w-[85%] rounded-2xl border border-neutral-200 bg-neutral-100 p-3 dark:border-neutral-700",
+        "mx-auto my-auto h-fit w-full max-w-[85%] rounded-2xl border border-neutral-200 bg-neutral-100 p-3 shadow-2xl dark:border-neutral-700",
         className,
       )}
     >
       <div className="flex items-center gap-3">
         {icon}
-        <p className="text-sm font-bold text-black dark:text-white">{title}</p>
+        <p className="text-sm font-normal text-black dark:text-white">
+          {title}
+        </p>
         {badge}
       </div>
-      <p className="dark:neutral-400 mt-3 text-sm font-medium text-neutral-500">
+      <p className="dark:neutral-400 mt-3 text-sm font-medium text-neutral-400">
         {description}
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-2">
