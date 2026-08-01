@@ -79,7 +79,7 @@ export const CardSkeleton = ({
   return (
     <div
       className={cn(
-        "relative h-40 overflow-hidden perspective-distant md:h-80",
+        "relative h-40 overflow-hidden md:h-80",
         !noEffect && "perspective-distant",
         className,
       )}
