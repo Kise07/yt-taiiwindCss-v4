@@ -70,18 +70,23 @@ export const CardTitle = ({
 export const CardSkeleton = ({
   className,
   children,
+  noEffect,
 }: {
   className?: string;
   children?: React.ReactNode;
+  noEffect?: boolean;
 }) => {
   return (
     <div
       className={cn(
         "relative h-40 overflow-hidden perspective-distant md:h-80",
+        !noEffect && "perspective-distant",
         className,
       )}
     >
-      <div className="absolute inset-0 h-full w-full bg-white mask-radial-from-50%"></div>
+      {!noEffect && (
+        <div className="absolute inset-0 h-full w-full bg-white mask-radial-from-50%"></div>
+      )}
       {children}
     </div>
   );
