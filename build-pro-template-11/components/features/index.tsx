@@ -34,7 +34,7 @@ export const Features = () => {
           </CardContent>
         </Card>
         <Card>
-          <CardSkeleton noEffect>
+          <CardSkeleton>
             <SkeletonTwo />
           </CardSkeleton>
           <CardContent>

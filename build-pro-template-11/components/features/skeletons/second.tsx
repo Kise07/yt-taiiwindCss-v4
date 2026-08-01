@@ -9,8 +9,12 @@ import {
 export const SkeletonTwo = () => {
   return (
     <div
+      style={{
+        transform: "rotateY(20deg) rotateX(20deg) rotateZ(-20deg)",
+      }}
       className={cn(
-        "mx-auto my-auto flex h-full w-full max-w-[85%] flex-col rounded-2xl border border-neutral-200 bg-neutral-100 p-3 shadow-2xl dark:border-neutral-700",
+        "group mx-auto my-auto flex h-full w-full max-w-[85%] flex-col rounded-2xl border border-neutral-300 bg-neutral-100 mask-b-from-50% mask-radial-from-50% p-3 shadow-2xl dark:border-neutral-700",
+        "translate-x-10",
         "[--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-white)]/10",
       )}
     >
@@ -20,30 +24,34 @@ export const SkeletonTwo = () => {
           Campaign Planner
         </p>
       </div>
-      <div className="relative mt-4 flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-200">
+      <div className="relative mt-4 flex-1 rounded-2xl border border-neutral-200 bg-neutral-200">
         <Pattern />
-        <div className="absolute inset-0 h-full w-full divide-y divide-neutral-200 bg-white">
+        <div className="absolute inset-0 h-full w-full translate-x-12 -translate-y-4 scale-110 rounded-2xl bg-white transition-all duration-300 group-hover:translate-x-0 group-hover:-translate-y-0 group-hover:scale-100">
           <Row
             icon={<IconCheck className="size-3 fill-green-500 stroke-white" />}
             text="Fetching Data"
             time="10s"
           />
+          <GradientHr />
           <Row
             icon={<IconCheck className="size-3 fill-green-500 stroke-white" />}
             text="Processing Data"
             time="20s"
           />
+          <GradientHr />
           <Row
             icon={<IconLoader2 className="size-3 animate-spin text-white" />}
             text="Performing Action"
             time="50s"
             variant="warning"
           />
+          <GradientHr />
           <Row
             icon={<IconCheck className="size-3 fill-green-500 stroke-white" />}
             text="Waiting for Approval"
             time="50s"
           />
+          <GradientHr />
           <Row
             icon={<IconCheck className="size-3 fill-green-500 stroke-white" />}
             text="Success!"
@@ -52,6 +60,12 @@ export const SkeletonTwo = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const GradientHr = () => {
+  return (
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-200 to-transparent"></div>
   );
 };
 
