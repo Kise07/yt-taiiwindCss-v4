@@ -9,12 +9,7 @@ import {
 
 export const SkeletonOne = () => {
   return (
-    <div
-      style={{
-        transform: "rotateZ(15deg) rotateY(-20deg) rotateX(30deg) scale(1.2)",
-      }}
-      className="h-full w-full -translate-y-10 mask-r-from-50% mask-radial-from-50% perspective-distant"
-    >
+    <div className="h-full w-full -translate-y-10 scale-[1.2] rotate-x-30 -rotate-y-20 rotate-z-15 mask-r-from-50% mask-radial-from-50% perspective-distant">
       <SkeletonCard
         className="absolute bottom-0 left-12 z-30 max-w-[90%]"
         icon={<IconCircleDashedCheck className="size-4" />}
@@ -81,6 +76,7 @@ const SkeletonCard = ({
     </div>
   );
 };
+
 const Tag = ({ text }: { text: string }) => {
   return (
     <div className="rounded-sm bg-neutral-200 px-2 py-1 text-xs dark:bg-neutral-700">
