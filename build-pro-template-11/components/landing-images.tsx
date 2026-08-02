@@ -8,9 +8,9 @@ export const LandingImages = () => {
   return (
     <div className="relative overflow-hidden lg:overflow-visible">
       {/* top fade */}
-      {/* <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-48 bg-white mask-t-from-10%" /> */}
 
-      <div className="relative min-h-[34rem] w-full translate-x-10 pt-20 perspective-distant md:min-h-[40rem] md:translate-x-28 lg:min-h-[52rem]">
+      <div className="relative min-h-[34rem] w-full translate-x-10 pt-20 perspective-distant md:min-h-[40rem] md:translate-x-28 lg:min-h-[43rem]">
+        {/* <div className="pointer-events-none absolute inset-x-0 z-20 h-48 bg-white mask-t-from-10% pb-[37rem]" /> */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
