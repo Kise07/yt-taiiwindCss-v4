@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const LandingImages = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden lg:overflow-visible">
       {/* top fade */}
       {/* <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-48 bg-white mask-t-from-10%" /> */}
 
