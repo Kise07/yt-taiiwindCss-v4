@@ -12,7 +12,7 @@ import React from "react";
 
 export const SkeletonOne = () => {
   return (
-    <div className="absolute inset-x-0 mx-auto flex h-full w-full max-w-sm flex-1 flex-col gap-2 rounded-t-3xl border border-neutral-200 bg-neutral-100 p-2">
+    <div className="absolute inset-x-0 mx-auto flex h-full w-full max-w-[20rem] flex-1 flex-col gap-2 rounded-t-3xl border border-neutral-200 bg-neutral-100 p-2 lg:max-w-sm">
       <Card
         topIcon={<FileIcon className="size-4" />}
         title="Connect Data"

@@ -37,14 +37,14 @@ export const LandingImages = ({
           "relative w-full pt-20 md:min-h-[40rem] lg:min-h-[43rem]",
           showPerspective && "perspective-distant",
           showTranslate &&
-            "translate-x-10 translate-y-27 md:translate-x-28 md:translate-y-28",
+            "translate-x-10 translate-y-27 md:translate-x-28 md:translate-y-20",
           containerClassName,
         )}
         style={{ minHeight: minH }}
       >
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
           transition={{
             duration: 0.5,
             ease: "easeOut",
