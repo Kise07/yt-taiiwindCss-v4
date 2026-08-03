@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "motin/react";
 import { Container } from "../container";
 import { SkeletonOne } from "./skeletons/first";
+import { SkeletonTwo } from "./skeletons/second";
 
 export const FeaturesSecondary = () => {
   return (
@@ -33,7 +34,9 @@ export const FeaturesSecondary = () => {
                 interrupts, and conditional logic.
               </CardDescription>
             </CardContent>
-            <CardSkeleton></CardSkeleton>
+            <CardSkeleton>
+              <SkeletonTwo />
+            </CardSkeleton>
           </div>
         </div>
       </Container>
