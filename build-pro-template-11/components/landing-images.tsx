@@ -31,7 +31,7 @@ export const LandingImages = ({
   containerClassName,
 }: LandingImagesProps) => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden mask-b-from-50% mask-radial-from-50%">
       <div
         className={cn(
           "relative w-full pt-20 md:min-h-[40rem] lg:min-h-[43rem]",

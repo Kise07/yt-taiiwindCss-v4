@@ -18,9 +18,9 @@ export const SkeletonTwo = () => {
         "[--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-white)]/10",
       )}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 text-black">
         <IconCircleDashedCheck className="size-4" />
-        <p className="text-sm font-normal text-black dark:text-white">
+        <p className="text-sm font-normal text-black dark:text-neutral-600">
           Campaign Planner
         </p>
       </div>

@@ -73,9 +73,9 @@ const SkeletonCard = ({
         className,
       )}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 text-black">
         {icon}
-        <p className="text-sm font-normal text-black dark:text-white">
+        <p className="text-sm font-normal text-black dark:text-neutral-600">
           {title}
         </p>
       </div>
