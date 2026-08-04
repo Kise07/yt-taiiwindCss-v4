@@ -35,7 +35,7 @@ export const FeaturesTertiary = () => {
                 roles.
               </CardDescription>
             </CardContent>
-            <CardSkeleton className="">
+            <CardSkeleton className="mask-radial-from-20%">
               <SkeletonTwo />
             </CardSkeleton>
           </div>
