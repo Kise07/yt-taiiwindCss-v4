@@ -8,7 +8,7 @@ import {
   SheetsIcon,
 } from "@/icons";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const SkeletonOne = () => {
   return (
@@ -65,6 +65,11 @@ const Card = ({
     "var( --color-green-500 )",
     "var( --color-red-500 )",
   ];
+  const [bgColor, setBgColor] = useState(randomColors[0]);
+  useEffect(() => {
+    setBgColor(randomColors[Math.floor(Math.random() * randomColors.length)]);
+  }, []);
+
   return (
     <div className="flex items-start gap-4 rounded-[16px] border border-transparent bg-white p-4 ring-1 shadow-black/10 ring-black/10">
       <div
@@ -72,8 +77,7 @@ const Card = ({
           "mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-blue-500",
         )}
         style={{
-          backgroundColor:
-            randomColors[Math.floor(Math.random() * randomColors.length)],
+          backgroundColor: bgColor,
         }}
       >
         {topIcon}
