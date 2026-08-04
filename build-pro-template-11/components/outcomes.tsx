@@ -14,7 +14,10 @@ export const Outcomes = () => {
         Deploy AI agents with built-in approvals, brand guardrails, and audit
         trails. Every step is visible, reviewable, and compliant.
       </Subheading>
-      <LandingImages />
+      <LandingImages
+        src1="https://assets.aceternity.com/screenshots/5.jpg"
+        src2="https://assets.aceternity.com/screenshots/6.jpg"
+      />
     </Container>
   );
 };
