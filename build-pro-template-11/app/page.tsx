@@ -5,6 +5,7 @@ import { Hero } from "@/components/hero";
 import { LogoCloud } from "@/components/logo-cloud";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Outcomes } from "@/components/outcomes";
+import { Pricing } from "@/components/pricing";
 import { Speed } from "@/components/speed";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <FeaturesSecondary />
       <Outcomes />
       <FeaturesTertiary />
+      <Pricing />
     </div>
   );
 }
