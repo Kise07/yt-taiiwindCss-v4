@@ -166,6 +166,7 @@ const Card = ({
         <div className="mt-2 flex flex-row flex-wrap gap-2">
           {tags.map((tag, idx) => (
             <motion.div
+              key={idx}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 * idx * 0.5 }}
