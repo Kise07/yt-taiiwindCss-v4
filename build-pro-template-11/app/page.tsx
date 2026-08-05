@@ -1,3 +1,4 @@
+import { FAQs } from "@/components/faqs";
 import { Features } from "@/components/features";
 import { FeaturesSecondary } from "@/components/features-secondary";
 import { FeaturesTertiary } from "@/components/features-tertiary";
@@ -19,6 +20,7 @@ export default function Home() {
       <Outcomes />
       <FeaturesTertiary />
       <Pricing />
+      <FAQs />
     </div>
   );
 }
