@@ -6,6 +6,7 @@ import { SkeletonOne } from "./skeletons/first";
 import { SkeletonTwo } from "./skeletons/second";
 import { HumanIcon, IntegrationIcon, WorkflowIcon } from "@/icons";
 import { SkeletonThree } from "./skeletons/third";
+import { SkeletonFour } from "./skeletons/four";
 
 export const FeaturesTertiary = () => {
   return (
@@ -52,6 +53,19 @@ export const FeaturesTertiary = () => {
             </CardContent>
             <CardSkeleton className="mask-r-from-50% mask-radial-from-20%">
               <SkeletonThree />
+            </CardSkeleton>
+          </div>
+          <div className="border-neutral-200 dark:border-neutral-800">
+            <CardContent>
+              <h2 className="text-lg font-bold text-neutral-800">
+                Guardrail Engine
+              </h2>
+              <CardDescription>
+                Applies brand, tone, and policy checks before output goes live.
+              </CardDescription>
+            </CardContent>
+            <CardSkeleton className="">
+              <SkeletonFour />
             </CardSkeleton>
           </div>
         </div>
