@@ -118,6 +118,7 @@ export const SkeletonOne = () => {
             className="w-full"
           >
             <CardItem
+              index={idx}
               key={item.title}
               icon={item.icon}
               iconClassName={item.iconClassName}
@@ -150,12 +151,14 @@ const CardItem = ({
   title,
   badge,
   description,
+  index,
 }: {
   icon: React.ReactNode;
   iconClassName?: string;
   title: string;
   description: string;
   badge: React.ReactNode;
+  index: number;
 }) => {
   const randomColors = [
     "var( --color-blue-500 )",
@@ -176,9 +179,18 @@ const CardItem = ({
         <p className="text-sm text-neutral-600">{title}</p>
         {badge}
       </div>
-      <p className="w-full max-w-[16rem] flex-nowrap text-left text-sm whitespace-nowrap text-neutral-500">
-        {description}
-      </p>
+      <motion.p className="w-full max-w-[16rem] flex-nowrap text-left text-sm whitespace-nowrap text-neutral-500">
+        {description.split("").map((item, idx) => (
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: idx * 0.01 + index * 0.1 }}
+            key={idx}
+          >
+            {item}
+          </motion.span>
+        ))}
+      </motion.p>
     </div>
   );
 };

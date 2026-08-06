@@ -93,7 +93,9 @@ const Row = ({
         >
           {icon}
         </div>
-        <p className="text-sm font-medium text-neutral-500">{text}</p>
+        <p className="text-xs font-medium text-neutral-500 md:text-sm">
+          {text}
+        </p>
       </div>
       <div className="flex items-center gap-1 text-neutral-400">
         <IconRipple className={cn("size-3")} />

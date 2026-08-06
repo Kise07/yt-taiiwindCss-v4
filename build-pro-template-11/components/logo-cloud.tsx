@@ -32,7 +32,8 @@ export const LogoCloud = () => {
   return (
     <section className="pb-10 md:pb-10">
       <h2 className="mx-auto max-w-xl text-center text-lg font-medium text-neutral-600 dark:text-neutral-400">
-        Trusted by modern operators across industries. <br />
+        Trusted by modern operators across industries.{" "}
+        <br className="hidden md:block" />
         <span className="text-neutral-400">From pilot to scale chaos.</span>
       </h2>
 

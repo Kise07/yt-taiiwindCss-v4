@@ -15,7 +15,7 @@ import {
   IconFilter2Search,
   IconPointerUp,
 } from "@tabler/icons-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 export const SkeletonFour = () => {
@@ -82,7 +82,36 @@ export const SkeletonFour = () => {
     },
   ];
 
+  // React logic to automatically cycle through the items every 2 seconds
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const currentIndexRef = useRef(0);
+
+  // React state to keep track of the currently selected item
   const [selected, setSelected] = useState(items[0]);
+
+  // React effect to start the autoplay when the component mounts and clean up when it unmounts
+  const startAutoplay = () => {
+    stopAutoplay(); // Clear any existing interval
+
+    intervalRef.current = setInterval(() => {
+      currentIndexRef.current = (currentIndexRef.current + 1) % items.length;
+      setSelected(items[currentIndexRef.current]);
+    }, 2000);
+  };
+
+  // React effect to stop the autoplay when the component unmounts
+  const stopAutoplay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoplay(); // Start the autoplay when the component mounts
+    return () => stopAutoplay(); // Clean up the interval when the component unmounts
+  }, []);
+
   return (
     <div>
       <div className="mx-auto mb-4 flex max-w-lg flex-wrap items-center justify-center gap-4">
@@ -91,12 +120,18 @@ export const SkeletonFour = () => {
             onClick={() => setSelected(item)}
             key={idx}
             className={cn(
-              "flex cursor-pointer items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs opacity-50 transition duration-200 active:scale-98",
+              "relative flex cursor-pointer items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs opacity-50 transition duration-200 active:scale-98",
               selected.title === item.title && "opacity-100",
               item.className,
             )}
           >
-            {" "}
+            {/* // A shdow inner border to indicate the selected item - Note Look Closely at Button shadow */}
+            {selected.title === item.title && (
+              <motion.div
+                layoutId="selected-item"
+                className="absolute inset-0 rounded-[5px] shadow-inner"
+              ></motion.div>
+            )}
             {item.icon}
             {item.title}
           </button>
