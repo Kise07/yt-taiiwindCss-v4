@@ -8,16 +8,44 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const FAQs = () => {
+  const questions = [
+    {
+      question: "What is Agenforce AI?",
+      answer: "Agenforce AI is a platform for building and managing AI agents.",
+    },
+    {
+      question: "Who is Agenforce AI built for?",
+      answer: "Agenforce AI is a platform for building and managing AI agents.",
+    },
+    {
+      question: "How does Agenforce AI work?",
+      answer: "Agenforce AI is a platform for building and managing AI agents.",
+    },
+    {
+      question: "Is there a free trial available?",
+      answer: "Agenforce AI is a platform for building and managing AI agents.",
+    },
+    {
+      question: "What kind of support do you provide?",
+      answer: "Agenforce AI is a platform for building and managing AI agents.",
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden py-10 md:py-20 lg:py-32">
       <Container>
         <UserChatIcon />
         <Heading className="my-10 md:my-20">Frequently Asked Questions</Heading>
 
-        <Question
-          question="What is Agenforce AI?"
-          answer="Agenforce AI is a platform for building and managing AI agents."
-        />
+        <div className="flex flex-col gap-4">
+          {questions.map((question, index) => (
+            <Question
+              key={index}
+              question={question.question}
+              answer={question.answer}
+            />
+          ))}
+        </div>
       </Container>
     </section>
   );
@@ -38,7 +66,7 @@ const Question = ({
     >
       <div className="flex items-center justify-between">
         <h3 className="font-display text-lg font-bold md:text-2xl">
-          What is Agenforce AI?
+          {question}
         </h3>
         <div className="relative flex size-6 items-center justify-center rounded-full bg-black">
           <IconMinus
@@ -70,13 +98,15 @@ const Question = ({
         }}
         className="overflow-hidden"
       >
-        <p className="mt-4 text-left text-neutral-600">
-          Agenfrce is a unified dashboard that helps you monitor usage and
-          spending across top AI providers like OpenAI, Anthropic, Gemini,
-          DeepSeek, and Grok. It gives real-time insights, alerts, and cost
-          breakdowns by model, provider, project, or user-so you always stay
-          control of your AI budget.
-        </p>
+        <motion.p
+          key={String(open)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+          className="mt-4 text-left text-neutral-600"
+        >
+          {answer}
+        </motion.p>
       </motion.div>
     </button>
   );
