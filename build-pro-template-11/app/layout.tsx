@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
         >
           <Navbar />
           <main className="bg-background text-foreground">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
